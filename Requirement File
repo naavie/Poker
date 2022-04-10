@@ -1,0 +1,61 @@
+Problem: You have two poker hands that are represented by strings and you want to figure out what hand is stronger. 
+
+
+Example: 
+
+Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+
+- A hand is represented by a slice of cards, size 5
+
+
+
+Classes: 
+- A card is a number and a suit. 
+- A suit is one of: Diamond, Club, Heart, or Spade
+- A number on a card is one of: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
+- Does the order matter? 
+
+
+Function: Turing a string into a card
+- How do I turn the string into a card?  
+- The first character of a card string is its number and the second character is the card’s suit. 
+
+- To convert a string into a card, we can create a new card and select the 0th and 1st elements. The 0th element can be used to set the card’s number and the 1st element can be used to set the card’s suit. 
+
+
+
+—OPEN
+
+Function: Split
+
+"XY_AB" -> ["XY","AB"] (underscore represents a space)
+
+—CLOSE
+
+
+- Creating an index is to create a map between a number and string. To index something that exists is called something else. 
+
+- We want to turn five cards into a hand. To do this, we must: 
+
+- A string of five cards is comprised of a minimum of ten characters. The first character of every card will be represented by a number and the second character of every hand will be represented by 
+
+- How do we turn a string that is represented as a hand into five cards? 
+
+- First, using the Split function, we can turn one string into a list of strings that contains five elements. Each element is a card and it must be separated by a space. Then, using our other function we can turn the string into a card. 
+
+- A string of five cards is a hand. 
+
+- Using the split function one additional time, this is the output you would expect: 
+
+- ["Black:","2H","3D","5S","9C","KD","White:","2C","3H","4S","8C","AH"]
+
+
+
+— 
+
+We can create another array of strings that represents the second player’s hand. First, we can use 
+
+
+Take Home: Using the initial hands string, write a text function, composed of other functions that turns it into two hands that are identifiable into white hand and black hand. Send the text file to Sean for review. 
+
+Then after you do this, send me the text file and then after you've done that, convert this into golang.
