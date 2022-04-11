@@ -49,8 +49,6 @@ Function: Split
 
 - ["Black:","2H","3D","5S","9C","KD","White:","2C","3H","4S","8C","AH"]
 
-
-
 — 
 
 We can create another array of strings that represents the second player’s hand. First, we can use 
