@@ -5,6 +5,11 @@ import (
 	"strings"
 )
 
+type Frame struct {
+	BlackHandStrings string
+	WhiteHandStrings string
+}
+
 // Take Home: Using the initial hands string, write a text function, composed of other functions that turns it into two hands that are identifiable into white hand and black hand.
 
 // Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
@@ -56,7 +61,3 @@ func main() {
 //																					   ["Black:","2H","3D","5S","9C","KD","White:","2C","3H","4S","8C","AH"]
 
 // SPLIT function
-
-func Split(string) {
-
-}
