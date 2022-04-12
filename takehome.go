@@ -25,8 +25,14 @@ func main() {
 	originalWhiteHand[4] = "AH"
 
 	// The print statements below should match the expected output indicated in line 7.
-	fmt.Println("Black:", originalBlackHand)
-	fmt.Println("White:", originalWhiteHand)
+
+	playerOne := "Black:"
+	playerTwo := "White:"
+
+	fmt.Println(playerOne, originalBlackHand)
+	fmt.Println(playerTwo, originalWhiteHand)
 }
 
-// Task One: Separate the elements
+// Task One: Separate every element in originalBlackHand & originalWhiteHand with the SPLIT function such that there is a comma between the former and latter elements
+
+// SPLIT function
