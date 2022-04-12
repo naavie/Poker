@@ -31,15 +31,14 @@ func main() {
 		BlackCardNumber := cardNumber[randomCardIndex]
 		BlackCardSuit := cardSuit[randomSuitIndex]
 
-		WhiteCardNumber := cardNumber[randomCardIndex]
-		WhiteCardSuit := cardSuit[randomSuitIndex]
+		// WhiteCardNumber := cardNumber[randomCardIndex]
+		// WhiteCardSuit := cardSuit[randomSuitIndex]
 
 		BlackHand := BlackCardNumber + BlackCardSuit
 
-		WhiteHand := WhiteCardNumber + WhiteCardSuit
+		// WhiteHand := WhiteCardNumber + WhiteCardSuit
 
 		fmt.Println(playerOneHand + BlackHand)
-		fmt.Println(playerTwoHand + WhiteHand)
 
 	}
 }
