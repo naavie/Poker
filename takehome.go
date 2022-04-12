@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Take Home: Using the initial hands string, write a text function, composed of other functions that turns it into two hands that are identifiable into white hand and black hand.
 
@@ -32,13 +34,14 @@ func main() {
 	fmt.Println(playerOne, BlackHand)
 	fmt.Println(playerTwo, WhiteHand)
 
+	// Printed on same line
 	fmt.Println(playerOne, BlackHand, playerTwo, WhiteHand)
 
 }
 
 // Task One: Separate every element in originalBlackHand & originalWhiteHand with the SPLIT function such that there is a comma between the former and latter elements
 
-// - Using the split function one additional time, this is the output you would expect:
+// Using the split function one additional time, this is the output you would expect:
 
 //																					   ["Black:","2H","3D","5S","9C","KD","White:","2C","3H","4S","8C","AH"]
 
