@@ -24,6 +24,9 @@ func main() {
 	originalWhiteHand[3] = "8C"
 	originalWhiteHand[4] = "AH"
 
-	fmt.Println(originalBlackHand)
-	fmt.Println(originalWhiteHand)
+	// The print statements below should match the expected output indicated in line 7.
+	fmt.Println("Black:", originalBlackHand)
+	fmt.Println("White:", originalWhiteHand)
 }
+
+// Task One: Separate the elements
