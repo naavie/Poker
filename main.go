@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 )
 
@@ -18,17 +19,19 @@ var playerTwoHand string = "White:"
 // - To convert a string into a card, we can create a new card and select the 0th and 1st elements.
 // - The 0th element can be used to set the card’s number and the 1st element can be used to set the card’s suit.
 
-func newCard() {
-
-	var playerOneCards string
-	var playerTwoCards string
+func main() {
 
 	cardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
 	cardSuit := []string{"H", "D", "S", "C"}
 
-	randomCardNumber := rand.Intn(len(cardNumber))
-	randomCardSuit := rand.Intn(len(cardSuit))
+	randomCardIndex := rand.Intn(len(cardNumber))
+	randomSuitIndex := rand.Intn(len(cardSuit))
 
-	playerCard := randomCardNumber + randomCardSuit
+	playerCardNumber := cardNumber[randomCardIndex]
+	playerCardSuit := cardSuit[randomSuitIndex]
+
+	playerHand := playerCardNumber + playerCardSuit
+
+	fmt.Println(playerHand)
 
 }
