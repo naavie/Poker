@@ -19,20 +19,27 @@ var playerTwoHand string = "White:"
 // - To convert a string into a card, we can create a new card and select the 0th and 1st elements.
 // - The 0th element can be used to set the card’s number and the 1st element can be used to set the card’s suit.
 
-func newCard() {
+func main() {
 
 	cardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
 	cardSuit := []string{"H", "D", "S", "C"}
 
-	for i := 0; i <= 5; i++ {
+	for i := 0; i <= 4; i++ {
 		randomCardIndex := rand.Intn(len(cardNumber))
 		randomSuitIndex := rand.Intn(len(cardSuit))
 
-		playerCardNumber := cardNumber[randomCardIndex]
-		playerCardSuit := cardSuit[randomSuitIndex]
+		BlackCardNumber := cardNumber[randomCardIndex]
+		BlackCardSuit := cardSuit[randomSuitIndex]
 
-		playerHand := playerCardNumber + playerCardSuit
+		WhiteCardNumber := cardNumber[randomCardIndex]
+		WhiteCardSuit := cardSuit[randomSuitIndex]
 
-	} playerHand
+		BlackHand := BlackCardNumber + BlackCardSuit
 
+		WhiteHand := WhiteCardNumber + WhiteCardSuit
+
+		fmt.Println(playerOneHand + BlackHand)
+		fmt.Println(playerTwoHand + WhiteHand)
+
+	}
 }
