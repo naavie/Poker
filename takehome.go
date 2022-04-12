@@ -15,9 +15,7 @@ type Frame struct {
 // Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
 
 func main() {
-	//  Variables that contain the original card set we were working with.
 	BlackHand := []string{"2H", "3D", "5S", "9C", "KD"}
-
 	// BlackHand[0] = "2H"
 	// BlackHand[1] = "3D"
 	// BlackHand[2] = "5S"
@@ -25,14 +23,11 @@ func main() {
 	// BlackHand[4] = "KD"
 
 	WhiteHand := []string{"2C", "3H", "4S", "8C", "AH"}
-
 	// WhiteHand[0] = "2C"
 	// WhiteHand[1] = "3H"
 	// WhiteHand[2] = "4S"
 	// WhiteHand[3] = "8C"
 	// WhiteHand[4] = "AH"
-
-	// The print statements below should match the expected output indicated in line 7.
 
 	playerOne := "Black:"
 	playerTwo := "White:"
