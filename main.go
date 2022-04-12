@@ -1,5 +1,9 @@
 package main
 
+import (
+	"math/rand"
+)
+
 var playerOneHand string = "Black:"
 var playerTwoHand string = "White:"
 
@@ -18,7 +22,13 @@ func newCard() {
 
 	var playerOneCards string
 	var playerTwoCards string
-	for i := 0; i <= 5; i++ {
 
-	}
+	cardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
+	cardSuit := []string{"H", "D", "S", "C"}
+
+	randomCardNumber := rand.Intn(len(cardNumber))
+	randomCardSuit := rand.Intn(len(cardSuit))
+
+	playerCard := randomCardNumber + randomCardSuit
+
 }
