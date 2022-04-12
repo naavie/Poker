@@ -6,8 +6,8 @@ import (
 )
 
 type Frame struct {
-	BlackHandStrings string
-	WhiteHandStrings string
+	BlackHand string
+	WhiteHand string
 }
 
 // Take Home: Using the initial hands string, write a text function, composed of other functions that turns it into two hands that are identifiable into white hand and black hand.
@@ -37,21 +37,27 @@ func main() {
 	playerOne := "Black:"
 	playerTwo := "White:"
 
-	// Testing Pt. 1: Code works this far.
-	fmt.Println("Testing Only:", playerOne, BlackHand)
-	fmt.Println("Testing Only:", playerTwo, WhiteHand)
+	// // Testing Pt. 1: Code works this far.
+	// fmt.Println("Testing Only:", playerOne, BlackHand)
+	// fmt.Println("Testing Only:", playerTwo, WhiteHand)
 
-	// Testing Pt. 1: Continued.
-	fmt.Println("Testing Only:", playerOne, BlackHand, playerTwo, WhiteHand)
+	// // Testing Pt. 1: Continued.
+	// fmt.Println("Testing Only:", playerOne, BlackHand, playerTwo, WhiteHand)
 
 	// Final steps
-	if len(BlackHand) == 5 {
+	if len(BlackHand) == 5 { //5 cards
 		BlackHand := strings.Join(BlackHand, ", ")
-		fmt.Println(BlackHand)
+		fmt.Println(playerOne, BlackHand)
 	}
-	if len(WhiteHand) == 5 {
+	if len(WhiteHand) == 5 { // 5 cards
 		WhiteHand := strings.Join(WhiteHand, ", ")
-		println(WhiteHand)
+		fmt.Println(playerTwo, WhiteHand)
+	}
+
+	if len(BlackHand) == 5 && len(WhiteHand) == 5 {
+		BlackHand := strings.Join(BlackHand, ", ")
+		WhiteHand := strings.Join(WhiteHand, ", ")
+		fmt.Println(playerOne, BlackHand, playerTwo, WhiteHand)
 	}
 
 }
