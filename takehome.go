@@ -38,19 +38,21 @@ func main() {
 	playerTwo := "White:"
 
 	// Testing Pt. 1: Code works this far.
-	fmt.Println(playerOne, BlackHand)
-	fmt.Println(playerTwo, WhiteHand)
+	fmt.Println("Testing Only:", playerOne, BlackHand)
+	fmt.Println("Testing Only:", playerTwo, WhiteHand)
 
 	// Testing Pt. 1: Continued.
-	fmt.Println(playerOne, BlackHand, playerTwo, WhiteHand)
-
-	BlackHandStrings := strings.Join(BlackHand, ", ")
-	WhiteHandStrings := strings.Join(WhiteHand, ", ")
-
-	fmt.Println(BlackHandStrings)
-	fmt.Println(WhiteHandStrings)
+	fmt.Println("Testing Only:", playerOne, BlackHand, playerTwo, WhiteHand)
 
 	// Final steps
+	if len(BlackHand) == 5 {
+		BlackHand := strings.Join(BlackHand, ", ")
+		fmt.Println(BlackHand)
+	}
+	if len(WhiteHand) == 5 {
+		WhiteHand := strings.Join(WhiteHand, ", ")
+		println(WhiteHand)
+	}
 
 }
 
