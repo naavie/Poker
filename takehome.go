@@ -37,14 +37,6 @@ func main() {
 	playerOne := "Black:"
 	playerTwo := "White:"
 
-	// // Testing Pt. 1: Code works this far.
-	// fmt.Println("Testing Only:", playerOne, BlackHand)
-	// fmt.Println("Testing Only:", playerTwo, WhiteHand)
-
-	// // Testing Pt. 1: Continued.
-	// fmt.Println("Testing Only:", playerOne, BlackHand, playerTwo, WhiteHand)
-
-	// Final steps
 	if len(BlackHand) == 5 { //5 cards
 		BlackHand := strings.Join(BlackHand, ", ")
 		fmt.Println(playerOne, BlackHand)
