@@ -32,15 +32,6 @@ func main() {
 	playerOne := "Black:"
 	playerTwo := "White:"
 
-	if len(BlackHand) == 5 { //5 cards
-		BlackHand := strings.Join(BlackHand, ", ")
-		fmt.Println(playerOne, BlackHand)
-	}
-	if len(WhiteHand) == 5 { // 5 cards
-		WhiteHand := strings.Join(WhiteHand, ", ")
-		fmt.Println(playerTwo, WhiteHand)
-	}
-
 	if len(BlackHand) == 5 && len(WhiteHand) == 5 {
 		BlackHand := strings.Join(BlackHand, ", ")
 		WhiteHand := strings.Join(WhiteHand, ", ")

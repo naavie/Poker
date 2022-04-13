@@ -21,3 +21,13 @@ func main() {
 	}
 
 }
+
+func MakeNewCard(number string, suit string) {
+
+	deckcardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
+	deckcardSuit := []string{"H", "D", "S", "C"}
+
+	fmt.Println(deckcardNumber)
+	fmt.Println(deckcardSuit)
+
+}
