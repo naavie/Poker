@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	initialHandString := "Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH"
+	initialHandString := []string{"Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH"}
 	fmt.Println(initialHandString)
 
 	fmt.Println("The length of the slice, initialHandString is:", len(initialHandString))
@@ -17,6 +17,7 @@ func main() {
 	for i, ch := range initialHandString {
 		strings.Join(initialHandString, ", ")
 		fmt.Println(ch, i)
+		fmt.Println(len(initialHandString))
 
 	}
 
