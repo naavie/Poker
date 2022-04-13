@@ -32,10 +32,12 @@ func main() {
 	playerOne := "Black:"
 	playerTwo := "White:"
 
+	fmt.Println("Before:", playerOne, BlackHand, playerTwo, WhiteHand)
+
 	if len(BlackHand) == 5 && len(WhiteHand) == 5 {
 		BlackHand := strings.Join(BlackHand, ", ")
 		WhiteHand := strings.Join(WhiteHand, ", ")
-		fmt.Println(playerOne, BlackHand, playerTwo, WhiteHand)
+		fmt.Println("After:", playerOne, BlackHand, playerTwo, WhiteHand)
 	}
 
 }

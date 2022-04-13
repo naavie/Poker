@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	initialHandString := []string{"Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH"}
+	initialHandString := "Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH"
 	fmt.Println(initialHandString)
 
 	fmt.Println("The length of the slice, initialHandString is:", len(initialHandString))
@@ -20,14 +20,14 @@ func main() {
 
 	}
 
+	// example of how I would use the MakeNewCard function
+	//blackplayercard1 := MakeNewCard("2", "H")
+
 }
 
 func MakeNewCard(number string, suit string) {
 
-	deckcardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
-	deckcardSuit := []string{"H", "D", "S", "C"}
-
-	fmt.Println(deckcardNumber)
-	fmt.Println(deckcardSuit)
+	// deckcardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
+	// deckcardSuit := []string{"H", "D", "S", "C"}
 
 }
