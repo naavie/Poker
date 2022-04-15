@@ -1,3 +1,58 @@
-- Start thinking about the problem at large 
+Poker - Functional Decomposition: 
 
-- Be very specific about what your are changing/manipulating
+
+Problem: You have two poker hands that are represented by strings and you want to figure out what hand is stronger. 
+
+Take Home Assignment: Using the initial hands string, write a text function, composed of other functions that turns it into two hands that are identifiable into white hand and black hand. 
+
+Initial Hand String: 
+Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+
+Q1: What is a card composed of in poker? 
+
+- A card is made up of a number and a suit. 
+- A suit is one of: {Diamond, Club, Heart, or Spade}
+- A number on a card is one of: {2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A}
+
+Q2: Does the order of a card matter? 
+
+- Yes, the order matters. The card's number must always be the card's first element and the card's suit will always be the second element of a card.
+
+Q3: What does a hand represent in Poker?
+A hand is composed of 5 cards. In Golang, a hand might be represented a slice or as an array. 
+
+--- 
+
+Given the Initial Hand String above, the first I noticed is that there is one whitespace between every card that is represented in that string and two whitespaces to distinguish between player hands. 
+
+To convert the Initial Hand String from a string of size 1 into separate cards, we will first need to create a new function, Split, in Golang. 
+
+This Split function will take the Initial Hand String and separate every element in the string with a ", " depending on the number of whitespaces there are in the Initial Hand String. 
+
+In the Split function, I would utilize if-then conditions based on the number of whitespaces between characters in the Initial Hand String to separate the string of cards into separate cards. 
+
+If there is only one whitespace between every card, the Split function will add a ", " after every card to separate them. 
+
+However, if there are two or more whitespaces between the former card and the next element in the Initial Hand String, the Split function will recognize that the number of whitespaces and if they exceed one whitespace, the Split function will identify that the first player's cards have been dealt and now the second player's cards will follow. 
+
+If the Split function is sucessful in doing what it is designed to do, the Initial Hand String will have transformed as follows:
+
+Example: 
+
+Before Split function is applied: 
+Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+
+After Split function is applied:["Black:", - ["Black:","2H","3D","5S","9C","KD","White:","2C","3H","4S","8C","AH"]
+
+- After applying the Split function to the Initial Hand String, I would save it to a new variable named, ITSsplit. 
+
+At this point, we will have turned the Initial Hand String into a slice of strings that are separated by a ", ". Every card (which contains a number & a suit), is a string and is separated by a comma and one whitespace. In total, there should be 12 string elements: 10 cards and 02 strings, "Black:" and "White:".   
+
+The next steps are to create a new function, MakeHand. Makehand when applied to ITSsplit will distiguish what cards in the slice of strings belong to each player, player: Black Hand and player: White Hand.
+
+In the function, MakeHand, I would take some slice of string as an input (ITSsplit variable). Within the function, I would include an if condition based on an element's position within its index. 
+
+For instance, the first if condition would be, if there are 12 elements in the input, the function works. Otherwise, if the input has less than or greater than 12 elements, it return an error as well.
+
+Next, if our input has exactly 12 elements, it would be possible to distinguish between players Black Hand and White Hand. To do this, I would select two separate ranges of [0:5] and [6:11] of our input and save them into their own separate variables. Doing this gives us  two hands for two players. Each hand contains the player Name (string) and the each of the players 5 cards.
+
