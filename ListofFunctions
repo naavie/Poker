@@ -2,5 +2,5 @@ Split
 MakeHand 
 Hand Constructer 
 Card Constructer 
-
+- Takes a string such as "2H" that returns a card object that returns a number and a suit. The number should be comparable to the >, <, ,etc and the suit should have equality.  
 
