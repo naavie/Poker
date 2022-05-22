@@ -17,6 +17,7 @@ func CardConstructer(card string) Card {
 
 	example := "10H"
 	// turn the variable example into 10 & H, separately.
+	//{ Rank:ten, Suit: hearts}
 
 }
 
