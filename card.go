@@ -18,6 +18,10 @@ func CardConstructer(card string) Card {
 	cardSuit := card[len(card)-1]
 	cardNumber := card[:len(card)-1]
 
+	if cardNumber := ranks[2:] {
+
+	}
+
 	// turn the variable example into 10 & H, separately. Output: { Rank:ten, Suit: hearts}
 
 }
