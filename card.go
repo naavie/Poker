@@ -14,7 +14,10 @@ type Card struct {
 // Strings are slices, you can pick out parts by normal slice mechanics... str[2:] (give me everything from the second to the last) or str[1:len(str)] (second to the last).
 
 func CardConstructer(card string) Card {
-	//example := "10H"
+	// example := "10H"
+	cardSuit := card[len(card)-1]
+	cardNumber := card[:len(card)-1]
+
 	// turn the variable example into 10 & H, separately. Output: { Rank:ten, Suit: hearts}
 
 }
