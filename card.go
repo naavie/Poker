@@ -18,7 +18,7 @@ func CardConstructer(card string) Card {
 	cardSuit := card[len(card)-1]
 	cardNumber := card[:len(card)-1]
 
-	if cardNumber := ranks[2:] {
+	if _, ok := ranks[2:]; ok {
 
 	}
 
