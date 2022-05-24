@@ -18,11 +18,25 @@ func CardConstructer(card string) Card {
 	cardSuit := card[len(card)-1]
 	cardNumber := card[:len(card)-1]
 
-	if _, ok := ranks[2:]; ok {
-
-	}
+	return Card{rank: ranks[cardNumber], suit: suits[cardSuit]}
 
 	// turn the variable example into 10 & H, separately. Output: { Rank:ten, Suit: hearts}
+
+}
+
+type Hand struct {
+	cards      []Card
+	playerName string
+}
+
+func HandConstructer(playerName string, cards []string) Hand {
+	initalHand := make([]Card, 0)
+
+	for i := 0; i == 5; i++ {
+		initalHand = append(initalHand, CardConstructer(cards[i]))
+
+	}
+	return Hand{cards: initalHand, playerName: playerName}
 
 }
 
@@ -30,11 +44,11 @@ type Suit struct {
 	suit string
 }
 
-var suits = map[string]Suit{
-	"H": Suit{"Hearts"},
-	"S": Suit{"Spades"},
-	"C": Suit{"Clubs"},
-	"D": Suit{"Diamonds"},
+var suits = map[byte]Suit{
+	'H': Suit{"Hearts"},
+	'S': Suit{"Spades"},
+	'C': Suit{"Clubs"},
+	'D': Suit{"Diamonds"},
 }
 
 type Rank struct {
