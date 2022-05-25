@@ -79,3 +79,5 @@ var ranks = map[string]Rank{
 	"K":  Rank{13, "King"},
 	"A":  Rank{14, "Ace"},
 }
+
+// hi
