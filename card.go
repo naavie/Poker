@@ -79,3 +79,9 @@ func HandConstructer(playerName string, cards []string) Hand {
 
 // Just to clarify here, when you say matches a “particular” poker hand, are you referring to thing such as:
 // 			Three of a kind, suit pairs, etc?
+
+func HandSeperator(initalHand string) Hand {
+	if len(initalHand)%5 == 0 {
+
+	}
+}
