@@ -1,12 +1,12 @@
-package main
+// package main
 
-import (
-	"fmt"
-	"math/rand"
-)
+// import (
+// 	"fmt"
+// 	"math/rand"
+// )
 
-var playerOneHand string = "Black:"
-var playerTwoHand string = "White:"
+// var playerOneHand string = "Black:"
+// var playerTwoHand string = "White:"
 
 // Example: A hand is represented by a slice of cards, size 5
 // -----
@@ -19,26 +19,26 @@ var playerTwoHand string = "White:"
 // - To convert a string into a card, we can create a new card and select the 0th and 1st elements.
 // - The 0th element can be used to set the card’s number and the 1st element can be used to set the card’s suit.
 
-func testing() {
+// func testing() {
 
-	cardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
-	cardSuit := []string{"H", "D", "S", "C"}
+// 	cardNumber := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
+// 	cardSuit := []string{"H", "D", "S", "C"}
 
-	for i := 0; i <= 4; i++ {
-		randomCardIndex := rand.Intn(len(cardNumber))
-		randomSuitIndex := rand.Intn(len(cardSuit))
+// 	for i := 0; i <= 4; i++ {
+// 		randomCardIndex := rand.Intn(len(cardNumber))
+// 		randomSuitIndex := rand.Intn(len(cardSuit))
 
-		BlackCardNumber := cardNumber[randomCardIndex]
-		BlackCardSuit := cardSuit[randomSuitIndex]
+// 		BlackCardNumber := cardNumber[randomCardIndex]
+// 		BlackCardSuit := cardSuit[randomSuitIndex]
 
-		// WhiteCardNumber := cardNumber[randomCardIndex]
-		// WhiteCardSuit := cardSuit[randomSuitIndex]
+// 		// WhiteCardNumber := cardNumber[randomCardIndex]
+// 		// WhiteCardSuit := cardSuit[randomSuitIndex]
 
-		BlackHand := BlackCardNumber + BlackCardSuit
+// 		BlackHand := BlackCardNumber + BlackCardSuit
 
-		// WhiteHand := WhiteCardNumber + WhiteCardSuit
+// 		// WhiteHand := WhiteCardNumber + WhiteCardSuit
 
-		fmt.Println(playerOneHand + BlackHand)
+// 		fmt.Println(playerOneHand + BlackHand)
 
-	}
-}
+// 	}
+// }
