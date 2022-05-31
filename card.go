@@ -64,7 +64,7 @@ type Hand struct {
 
 // Function: HandConstructer - Takes two inputs, player name (string) and a slice of cards, and returns a Hand(Type) with values {cards: initalHand, playerName: playerName}.
 func HandConstructer(playerName string, cards []string) Hand {
-	initalHand := make([]Card, 5)
+	initalHand := make([]Card, 0)
 
 	for i := 0; i == 5; i++ {
 		initalHand = append(initalHand, CardConstructer(cards[i]))
@@ -80,20 +80,19 @@ func HandConstructer(playerName string, cards []string) Hand {
 // Just to clarify here, when you say matches a “particular” poker hand, are you referring to thing such as:
 // 			Three of a kind, suit pairs, etc?
 
-func HandSeperator(playerName string, cards string) Hand {
-	if len(cards)%5 == 0 {
-		playerOneName := playerName
-		playerOneCards := cards[:5]
+type HandSeperation struct {
+	playerName string
+	initalHand []string
+}
 
-		playerOneHand := append(playerOneName, playerOneCards)
-
-		if len(cards)%5 != 5 {
-			playerTwoName := playerName
-			playerTwoCards := cards[5:]
-
-			playerTwoHand := append(playerTwoName, playerTwoCards)
-		}
-
+func HandSeperator(playerName string, initalHand []string) HandSeperation {
+	if len(initalHand)%5 == 0 {
+		playerName = "Player One: "
+		playerOneCards := initalHand[:5]
+		return HandSeperation{playerName: playerName, initalHand: playerOneCards}
+	} else if len(initalHand)%5 != 0 {
+		playerName = "Player Two: "
+		playerTwoCards := initalHand[5:]
+		return HandSeperation{playerName: playerName, initalHand: playerTwoCards}
 	}
-	return playerOneHand, playerTwoHand
 }
