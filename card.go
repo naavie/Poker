@@ -1,5 +1,9 @@
 package main
 
+import (
+	"strings"
+)
+
 // Type: Suit - There are four, different suits in a standard deck of cards.
 type Suit struct {
 	suit string
@@ -92,4 +96,12 @@ func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
 
 // I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.)
 
-func HandEvaluator(initalHand []Card)
+func HandEvaluator(initalHand []Card) {
+	for i := 0; i == len(initalHand); i++ {
+		p1Cards := initalHand[:5]
+		p2Cards := initalHand[5:]
+
+		pa1CardsString = strings.Contains(p1Cards)
+
+	}
+}

@@ -45,3 +45,21 @@ func main() {
 // 		return HandSeperation{playerName: playerName, initalHand: playerTwoCards}
 // 	}
 // }
+//---------------------------------
+
+//
+
+// type Seperator struct {
+// 	playerOneName  string
+// 	playerTwoName  string
+// 	playerOneCards []Card
+// 	playerTwoCards []Card
+// }
+
+// func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
+
+// 	p1Cards := initalHand[:5]
+// 	p2Cards := initalHand[5:]
+
+// 	return Seperator{playerOneName: p1Name, playerOneCards: p1Cards, playerTwoName: p2Name, playerTwoCards: p2Cards}
+// }
