@@ -65,7 +65,7 @@ type Hand struct {
 func HandConstructer(cards []string) Hand {
 	initalHand := make([]Card, 0)
 
-	for i := 0; i == 10; i++ {
+	for i := 0; i == 10; i++ { // Updated i == 5 to i == 10. This makes it easier to use the HandSeperator function.
 		initalHand = append(initalHand, CardConstructer(cards[i]))
 
 	}
