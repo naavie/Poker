@@ -6,10 +6,10 @@ type Suit struct {
 }
 
 var suits = map[byte]Suit{
-	'H': {"Hearts"},
-	'S': {"Spades"},
-	'C': {"Clubs"},
-	'D': {"Diamonds"},
+	'H': Suit{"Hearts"},
+	'S': Suit{"Spades"},
+	'C': Suit{"Clubs"},
+	'D': Suit{"Diamonds"},
 }
 
 // Type: Rank - There are 13 different potential card numbers that a player can draw from a standand deck of cards.
@@ -19,19 +19,19 @@ type Rank struct {
 }
 
 var ranks = map[string]Rank{
-	"2":  {2, "Two"},
-	"3":  {3, "Three"},
-	"4":  {4, "Four"},
-	"5":  {5, "Five"},
-	"6":  {6, "Six"},
-	"7":  {7, "Seven"},
-	"8":  {8, "Eight"},
-	"9":  {9, "Nine"},
-	"10": {10, "Ten"},
-	"J":  {11, "Jack"},
-	"Q":  {12, "Queen"},
-	"K":  {13, "King"},
-	"A":  {14, "Ace"},
+	"2":  Rank{2, "Two"},
+	"3":  Rank{3, "Three"},
+	"4":  Rank{4, "Four"},
+	"5":  Rank{5, "Five"},
+	"6":  Rank{6, "Six"},
+	"7":  Rank{7, "Seven"},
+	"8":  Rank{8, "Eight"},
+	"9":  Rank{9, "Nine"},
+	"10": Rank{10, "Ten"},
+	"J":  Rank{11, "Jack"},
+	"Q":  Rank{12, "Queen"},
+	"K":  Rank{13, "King"},
+	"A":  Rank{14, "Ace"},
 }
 
 func (r Rank) LessThan(r2 Rank) bool {
@@ -77,9 +77,6 @@ func HandConstructer(playerName string, cards []string) Hand {
 
 // I'd also like you to think about how to check a hand matches a particular poker hand.
 
-// Just to clarify here, when you say matches a “particular” poker hand, are you referring to thing such as:
-// 			Three of a kind, suit pairs, etc?
-
 type HandSeperation struct {
 	playerName string
 	initalHand []string
@@ -96,3 +93,6 @@ func HandSeperator(playerName string, initalHand []string) HandSeperation {
 		return HandSeperation{playerName: playerName, initalHand: playerTwoCards}
 	}
 }
+
+// Just to clarify here, when you say matches a “particular” poker hand, are you referring to thing such as:
+// 			Three of a kind, suit pairs, etc?
