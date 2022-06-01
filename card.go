@@ -83,6 +83,7 @@ type Seperator struct {
 }
 
 func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
+
 	p1Cards := initalHand[:5]
 	p2Cards := initalHand[5:]
 
@@ -90,3 +91,5 @@ func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
 }
 
 // I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.)
+
+func HandEvaluator(initalHand []Card)
