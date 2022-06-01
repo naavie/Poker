@@ -6,10 +6,10 @@ type Suit struct {
 }
 
 var suits = map[byte]Suit{
-	'H': Suit{"Hearts"},
-	'S': Suit{"Spades"},
-	'C': Suit{"Clubs"},
-	'D': Suit{"Diamonds"},
+	'H': {"Hearts"},
+	'S': {"Spades"},
+	'C': {"Clubs"},
+	'D': {"Diamonds"},
 }
 
 // Type: Rank - There are 13 different potential card numbers that a player can draw from a standand deck of cards.
@@ -19,19 +19,19 @@ type Rank struct {
 }
 
 var ranks = map[string]Rank{
-	"2":  Rank{2, "Two"},
-	"3":  Rank{3, "Three"},
-	"4":  Rank{4, "Four"},
-	"5":  Rank{5, "Five"},
-	"6":  Rank{6, "Six"},
-	"7":  Rank{7, "Seven"},
-	"8":  Rank{8, "Eight"},
-	"9":  Rank{9, "Nine"},
-	"10": Rank{10, "Ten"},
-	"J":  Rank{11, "Jack"},
-	"Q":  Rank{12, "Queen"},
-	"K":  Rank{13, "King"},
-	"A":  Rank{14, "Ace"},
+	"2":  {2, "Two"},
+	"3":  {3, "Three"},
+	"4":  {4, "Four"},
+	"5":  {5, "Five"},
+	"6":  {6, "Six"},
+	"7":  {7, "Seven"},
+	"8":  {8, "Eight"},
+	"9":  {9, "Nine"},
+	"10": {10, "Ten"},
+	"J":  {11, "Jack"},
+	"Q":  {12, "Queen"},
+	"K":  {13, "King"},
+	"A":  {14, "Ace"},
 }
 
 func (r Rank) LessThan(r2 Rank) bool {
@@ -58,40 +58,36 @@ func CardConstructer(card string) Card {
 
 // Type: Hand
 type Hand struct {
-	cards      []Card
-	playerName string
+	cards []Card
 }
 
 // Function: HandConstructer - Takes two inputs, player name (string) and a slice of cards, and returns a Hand(Type) with values {cards: initalHand, playerName: playerName}.
-func HandConstructer(playerName string, cards []string) Hand {
+func HandConstructer(cards []string) Hand {
 	initalHand := make([]Card, 0)
 
-	for i := 0; i == 5; i++ {
+	for i := 0; i == 10; i++ {
 		initalHand = append(initalHand, CardConstructer(cards[i]))
 
 	}
-	return Hand{cards: initalHand, playerName: playerName}
+	return Hand{cards: initalHand}
 }
 
 // If you feel you understand the code, the next step is converting from the whole hands string (the one with the player names) into two hands.
 
 // I'd also like you to think about how to check a hand matches a particular poker hand.
 
-type HandSeperation struct {
-	playerName string
-	initalHand []string
+type Seperator struct {
+	playerOneName  string
+	playerTwoName  string
+	playerOneCards []string
+	playerTwoCards []string
 }
 
-func HandSeperator(playerName string, initalHand []string) HandSeperation {
-	if len(initalHand)%5 == 0 {
-		playerName = "Player One: "
-		playerOneCards := initalHand[:5]
-		return HandSeperation{playerName: playerName, initalHand: playerOneCards}
-	} else if len(initalHand)%5 != 0 {
-		playerName = "Player Two: "
-		playerTwoCards := initalHand[5:]
-		return HandSeperation{playerName: playerName, initalHand: playerTwoCards}
-	}
+func HandSeperator(p1Name string, p2Name string, initalHand []string) Seperator {
+	p1Cards := initalHand[:5]
+	p2Cards := initalHand[5:]
+
+	return Seperator{playerOneName: p1Name, playerOneCards: p1Cards, playerTwoName: p2Name, playerTwoCards: p2Cards}
 }
 
 // Just to clarify here, when you say matches a “particular” poker hand, are you referring to thing such as:

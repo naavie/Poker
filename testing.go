@@ -28,3 +28,20 @@ func main() {
 		}
 	}
 }
+
+// type HandSeperation struct {
+// 	playerName string
+// 	initalHand []string
+// }
+
+// func HandSeperator(playerName string, initalHand []string) HandSeperation {
+// 	if len(initalHand)%5 == 0 {
+// 		playerName = "Player One: "
+// 		playerOneCards := initalHand[:5]
+// 		return HandSeperation{playerName: playerName, initalHand: playerOneCards}
+// 	} else if len(initalHand)%5 != 0 {
+// 		playerName = "Player Two: "
+// 		playerTwoCards := initalHand[5:]
+// 		return HandSeperation{playerName: playerName, initalHand: playerTwoCards}
+// 	}
+// }
