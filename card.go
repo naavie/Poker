@@ -75,8 +75,6 @@ func HandConstructer(playerName string, cards []string) Hand {
 
 // If you feel you understand the code, the next step is converting from the whole hands string (the one with the player names) into two hands.
 
-// I'd also like you to think about how to check a hand matches a particular poker hand.
-
 type Seperator struct {
 	playerOneName  string
 	playerTwoName  string
@@ -91,5 +89,4 @@ func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
 	return Seperator{playerOneName: p1Name, playerOneCards: p1Cards, playerTwoName: p2Name, playerTwoCards: p2Cards}
 }
 
-// Just to clarify here, when you say matches a “particular” poker hand, are you referring to thing such as:
-// 			Three of a kind, suit pairs, etc?
+// I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.)
