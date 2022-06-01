@@ -58,11 +58,12 @@ func CardConstructer(card string) Card {
 
 // Type: Hand
 type Hand struct {
-	cards []Card
+	playerName string
+	cards      []Card
 }
 
 // Function: HandConstructer - Takes two inputs, player name (string) and a slice of cards, and returns a Hand(Type) with values {cards: initalHand, playerName: playerName}.
-func HandConstructer(cards []string) Hand {
+func HandConstructer(playerName string, cards []string) Hand {
 	initalHand := make([]Card, 0)
 
 	for i := 0; i == 10; i++ { // Updated i == 5 to i == 10. This makes it easier to use the HandSeperator function.
@@ -79,11 +80,11 @@ func HandConstructer(cards []string) Hand {
 type Seperator struct {
 	playerOneName  string
 	playerTwoName  string
-	playerOneCards []string
-	playerTwoCards []string
+	playerOneCards []Card
+	playerTwoCards []Card
 }
 
-func HandSeperator(p1Name string, p2Name string, initalHand []string) Seperator {
+func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
 	p1Cards := initalHand[:5]
 	p2Cards := initalHand[5:]
 
