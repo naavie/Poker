@@ -70,7 +70,7 @@ type Hand struct {
 func HandConstructer(playerName string, cards []string) Hand {
 	initalHand := make([]Card, 0)
 
-	for i := 0; i == 10; i++ { // Updated i == 5 to i == 10. This makes it easier to use the HandSeperator function.
+	for i := 0; i == 5; i++ { // Updated i == 5 to i == 10. This makes it easier to use the HandSeperator function.
 		initalHand = append(initalHand, CardConstructer(cards[i]))
 
 	}
@@ -79,29 +79,34 @@ func HandConstructer(playerName string, cards []string) Hand {
 
 // If you feel you understand the code, the next step is converting from the whole hands string (the one with the player names) into two hands.
 
-type Seperator struct {
-	playerOneName  string
-	playerTwoName  string
-	playerOneCards []Card
-	playerTwoCards []Card
+type Game struct {
+	playerOneHand Hand
+	playerTwoHand Hand
 }
 
-func HandSeperator(p1Name string, p2Name string, initalHand []Card) Seperator {
+// Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+func HandSeperator(initalHand string) Game {
 
-	p1Cards := initalHand[:5]
-	p2Cards := initalHand[5:]
+	splitHandDoubleSpace := strings.Split(initalHand, "  ")
+	splitHandBlack := strings.Split(splitHandDoubleSpace[0], ":")
+	splitHandWhite := strings.Split(splitHandDoubleSpace[1], ":")
 
-	return Seperator{playerOneName: p1Name, playerOneCards: p1Cards, playerTwoName: p2Name, playerTwoCards: p2Cards}
+	// ["Black" "2H 3D 5S 9C KD",  "White" "2C 3H 4S 8C AH"]"
+
+	splitHandBlackFinal := strings.Split(splitHandBlack[1], " ")
+	splitHandWhiteFinal := strings.Split(splitHandWhite[1], " ")
+
+	HandConstructer(splitHandBlack[0], splitHandBlackFinal)
+	HandConstructer(splitHandWhite[0], splitHandWhiteFinal)
+
+	return Game{}
+
 }
 
-// I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.)
+// Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+// Sean: 3H 4D 5C 6C KH  Nav: 2C 3H 4S 8C AH
+// Josh: 5S 9C 2H 3D KD  Jo: 2C 3H 4S 8C AH
 
-func HandEvaluator(initalHand []Card) {
-	for i := 0; i == len(initalHand); i++ {
-		p1Cards := initalHand[:5]
-		p2Cards := initalHand[5:]
+// I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.) Type this out and sent it to Sean.
 
-		pa1CardsString = strings.Contains(p1Cards)
-
-	}
-}
+// Think about how to fix function HandSeperator so it is simplier
