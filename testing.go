@@ -17,13 +17,10 @@ func main() {
 	s[9] = "2D"
 
 	if len(s)%5 == 0 {
-		fmt.Println("This code works")
-
-		playerName := "Navmeet: "
+		playerName := "Navmeet:"
 		fmt.Println(playerName, s[:5])
 		if len(s)%5 != 5 {
-			fmt.Println("This code works too! - TESTING")
-			playerName := "Sean: "
+			playerName := "Sean:"
 			fmt.Println(playerName, s[5:])
 		}
 	}
