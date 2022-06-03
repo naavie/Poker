@@ -110,3 +110,8 @@ func HandSeperator(initalHand string) Game {
 // I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.) Type this out and sent it to Sean.
 
 // Think about how to fix function HandSeperator so it is simplier
+
+
+
+
+wetw
