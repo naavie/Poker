@@ -88,16 +88,16 @@ type Game struct {
 func HandSeperator(initalHand string) Game {
 
 	splitHandDoubleSpace := strings.Split(initalHand, "  ")
-	splitHandBlack := strings.Split(splitHandDoubleSpace[0], ":")
-	splitHandWhite := strings.Split(splitHandDoubleSpace[1], ":")
+	splitHandNameOne := strings.Split(splitHandDoubleSpace[0], ":")
+	splitHandNameTwo := strings.Split(splitHandDoubleSpace[1], ":")
 
 	// ["Black" "2H 3D 5S 9C KD",  "White" "2C 3H 4S 8C AH"]"
 
-	splitHandBlackFinal := strings.Split(splitHandBlack[1], " ")
-	splitHandWhiteFinal := strings.Split(splitHandWhite[1], " ")
+	splitHandBlackFinal := strings.Split(splitHandNameOne[1], " ")
+	splitHandWhiteFinal := strings.Split(splitHandNameTwo[1], " ")
 
-	HandConstructer(splitHandBlack[0], splitHandBlackFinal)
-	HandConstructer(splitHandWhite[0], splitHandWhiteFinal)
+	HandConstructer(splitHandNameOne[0], splitHandBlackFinal)
+	HandConstructer(splitHandNameTwo[0], splitHandWhiteFinal)
 
 	return Game{}
 
@@ -110,8 +110,3 @@ func HandSeperator(initalHand string) Game {
 // I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.) Type this out and sent it to Sean.
 
 // Think about how to fix function HandSeperator so it is simplier
-
-
-
-
-wetw
