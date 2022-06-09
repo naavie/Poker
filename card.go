@@ -96,10 +96,10 @@ func HandSeperator(initalHand string) Game {
 	splitHandBlackFinal := strings.Split(splitHandNameOne[1], " ")
 	splitHandWhiteFinal := strings.Split(splitHandNameTwo[1], " ")
 
-	HandConstructer(splitHandNameOne[0], splitHandBlackFinal)
-	HandConstructer(splitHandNameTwo[0], splitHandWhiteFinal)
+	x := HandConstructer(splitHandNameOne[0], splitHandBlackFinal)
+	y := HandConstructer(splitHandNameTwo[0], splitHandWhiteFinal)
 
-	return Game{}
+	return Game{playerOneHand: x, playerTwoHand: y}
 
 }
 
@@ -110,3 +110,10 @@ func HandSeperator(initalHand string) Game {
 // I'd also like you to think about how to check a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.) Type this out and sent it to Sean.
 
 // Think about how to fix function HandSeperator so it is simplier
+
+type Evaluator struct {
+	x Hand
+	y Hand
+}
+
+func HandEvaluator(P1Hand Hand, P2Hand Hand) Evaluator
