@@ -111,9 +111,13 @@ func HandSeperator(initalHand string) Game {
 
 // Think about how to fix function HandSeperator so it is simplier
 
+// Type: Evaluator
 type Evaluator struct {
 	x Hand
 	y Hand
 }
 
-func HandEvaluator(P1Hand Hand, P2Hand Hand) Evaluator
+// Function: HandEvaluator
+func HandEvaluator(P1Hand Hand, P2Hand Hand) Evaluator {
+	return Evaluator{x: P1Hand, y: P2Hand}
+}
