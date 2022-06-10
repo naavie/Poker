@@ -119,5 +119,5 @@ type Evaluator struct {
 
 // Function: HandEvaluator
 func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
-	return Evaluator{x: P1Hand, y: P2Hand}
+	return Evaluator{}
 }

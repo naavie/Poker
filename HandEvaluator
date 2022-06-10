@@ -1,0 +1,81 @@
+Objective: 
+Think about how to check if a hand matches a particular poker hand (for examle: three of a kind, suit pairs, two of a kind, etc.)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Initial Thoughts: 
+
+Based on our code in card.go, there are 52 cards that can be created. However, the number of possible, 5-card combinations is significantly greater.
+
+To calculate the number of possible 5-card combinations, we can use combinatorics:
+
+52 Choose 5 = 2,598,960 possible 5-card combinations
+
+Defining each of these combinations is not feasible. Instead, I propose creating "clusters" or groupings of the types of combinations that a player can get in a 5-card hand.
+
+There are 7 different special combinations a player can get. They are: 
+
+1) Single Pair
+- 2 out of 5 cards have the same ranking but different suits. 
+- Example: [2H 2C 4D KH 9A]
+
+2) Two Pairs
+- Two pairs of two cards of different rank.
+- Example: [2H 2C 4D 4C 9A] 
+
+3) Three of a kind
+- 3 of 5 cards are of the same rank but different suit. The other two cards can be anything. 
+- Example: [7C 7H 7A AS 2D]
+
+4) Four of a kind
+- 4 of 5 cards are of the same rank but different suit.
+- Example: [4C 4H 4D 4S 9S] 
+
+5) Royal Flush 
+- 5 cards of the same suit in this exact sequence: [10H JH QH KH AH] 
+
+6) Straight Flush
+- Any five cards of the same suit in order of their rank. For example: [2H 3H 4H 5H 6H] or [7H 8H 9H 10H JH]
+
+7) Full House 
+- Consists of one Three of a kind pairing (3 cards) and any other 2-card pair.
+- Example: [KH KS KD 7S 7C]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+My Thought Process: 
+
+Optional Step: HandSorter Function
+
+The inital handstring used for this project was: Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+
+When we examine each of the player's hands, it's evident that cards for both players are already in order of thier rank. 
+
+If the player's cards were not in order of their rank, I would first create a function called: CardSorter which sorts cards based of their rank in the rank variable.   
+
+Step 1: Creating function, HandEvaluator.
+
+The HandEvaluator function will determine whether a player's 5-card hand contains any of the special hand combinations described in the Inital Thoughts section above. 
+
+The HandEvaluator function will be of a new Type called, Evaluator. 
+
+type Evaluator struct {
+	x string
+	y string
+}
+
+The Evaluator Type will also require two inputs: P1Hand & P2Hand. Both inputs are of Type string. The output of the function is of type evaluator Evaluator{x: P1Hand, y: P2Hand}. 
+
+Inside the body of the function, I would use strings.Split() to separate the P1Hand & P2Hand strings into:
+[0] - The player's name 
+[1] - The player's 5-cards  
+
+Each of these elements would be saved into four separate variables, two for each player's names and two for each player's 5-cards. 
+
+I  was thinking it might be useful to agaion separate each pair of 5-cards into thier individual rank and suit and saving those into separate variables too. However, it might also not matter if the scenario belows works out. 
+
+Using the strings.Count() function on each of those separate variables we created above, we can determine how many times a particular suit (4 possibilties) or particular number (13 possibilties) show up in our string variables. 
+
+Then from that we might be able to infer certain results. For instance, if using the len() function on the variable that contains Player One's card ranks only results in an output of 2, 3 or 4, that equates to a a pair, two pair, Three of a Kind, and four of a kind combinations, respectively.
+
+From there, we can continue to use the len() and strings.Count() functions are investigate each special 5-card combination.
+
+Once we have all the information we need, we can concatenate it and put it in our return statement. 
