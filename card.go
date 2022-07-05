@@ -119,5 +119,47 @@ type Evaluator struct {
 
 // Function: HandEvaluator
 func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
+
+	var suits_enumerated [4]int
+	suits_enumerated[0] = 1
+	suits_enumerated[1] = 2
+	suits_enumerated[2] = 3
+	suits_enumerated[3] = 4
+
 	return Evaluator{}
 }
+
+// https://stackoverflow.com/questions/42380183/algorithm-to-give-a-value-to-a-5-card-poker-hand
+
+// type Suit struct {
+// 	suit string
+// }
+
+// var suits = map[byte]Suit{
+// 	'H': {"Hearts"},
+// 	'S': {"Spades"},
+// 	'C': {"Clubs"},
+// 	'D': {"Diamonds"},
+// }
+
+// // Type: Rank - There are 13 different potential card numbers that a player can draw from a standand deck of cards.
+// type Rank struct {
+// 	value int
+// 	name  string
+// }
+
+// var ranks = map[string]Rank{
+// 	"2":  {2, "Two"},
+// 	"3":  {3, "Three"},
+// 	"4":  {4, "Four"},
+// 	"5":  {5, "Five"},
+// 	"6":  {6, "Six"},
+// 	"7":  {7, "Seven"},
+// 	"8":  {8, "Eight"},
+// 	"9":  {9, "Nine"},
+// 	"10": {10, "Ten"},
+// 	"J":  {11, "Jack"},
+// 	"Q":  {12, "Queen"},
+// 	"K":  {13, "King"},
+// 	"A":  {14, "Ace"},
+// }
