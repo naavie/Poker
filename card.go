@@ -111,6 +111,81 @@ func HandSeperator(initalHand string) Game {
 
 // Think about how to fix function HandSeperator so it is simplier
 
+type Deck struct {
+	cards []Card
+}
+
+var deck = map[string]Rank{
+	"2H":  {1, "Two of Hearts"},
+	"2C":  {2, "Two of Clubs"},
+	"2D":  {3, "Two of Diamonds"},
+	"2S":  {4, "Two of Spades"},
+	"3H":  {5, "Three of Hearts"},
+	"3C":  {6, "Three of Clubs"},
+	"3D":  {7, "Three of Diamonds"},
+	"3S":  {8, "Three of Spades"},
+	"4H":  {9, "Four of Hearts"},
+	"4C":  {10, "Four of Clubs"},
+	"4D":  {11, "Four of Diamonds"},
+	"4S":  {12, "Four of Spades"},
+	"5H":  {13, "Five of Hearts"},
+	"5C":  {14, "Five of Clubs"},
+	"5D":  {15, "Five of Diamonds"},
+	"5S":  {16, "Five of Spades"},
+	"6H":  {17, "Six of Hearts"},
+	"6C":  {18, "Six of Clubs"},
+	"6D":  {19, "Six of Diamonds"},
+	"6S":  {20, "Six of Spades"},
+	"7H":  {21, "Seven of Hearts"},
+	"7C":  {22, "Seven of Clubs"},
+	"7D":  {23, "Seven of Diamonds"},
+	"7S":  {24, "Seven of Spades"},
+	"8H":  {25, "Eight of Hearts"},
+	"8C":  {26, "Eight of Clubs"},
+	"8D":  {27, "Eight of Diamonds"},
+	"8S":  {28, "Eight of Spades"},
+	"9H":  {29, "Nine of Hearts"},
+	"9C":  {30, "Nine of Clubs"},
+	"9D":  {31, "Nine of Diamonds"},
+	"9S":  {32, "Nine of Spades"},
+	"10H": {33, "Ten of Hearts"},
+	"10C": {34, "Ten of Clubs"},
+	"10D": {35, "Ten of Diamonds"},
+	"10S": {36, "Ten of Spades"},
+	"JH":  {37, "Jack of Hearts"},
+	"JC":  {38, "Jack of Clubs"},
+	"JD":  {39, "Jack of Diamonds"},
+	"JS":  {40, "Jack of Spades"},
+	"QH":  {41, "Queen of Hearts"},
+	"QC":  {42, "Queen of Clubs"},
+	"QD":  {43, "Queen of Diamonds"},
+	"QS":  {44, "Queen of Spades"},
+	"KH":  {45, "King of Hearts"},
+	"KC":  {46, "King of Clubs"},
+	"KD":  {47, "King of Diamonds"},
+	"KS":  {48, "King of Spades"},
+	"AH":  {49, "Ace of Hearts"},
+	"AC":  {50, "Ace of Clubs"},
+	"AD":  {51, "Ace of Diamonds"},
+	"AS":  {52, "Ace of Spades"},
+}
+
+// var ranks = map[string]Rank{
+// 	"2":  {2, "Two"},
+// 	"3":  {3, "Three"},
+// 	"4":  {4, "Four"},
+// 	"5":  {5, "Five"},
+// 	"6":  {6, "Six"},
+// 	"7":  {7, "Seven"},
+// 	"8":  {8, "Eight"},
+// 	"9":  {9, "Nine"},
+// 	"10": {10, "Ten"},
+// 	"J":  {11, "Jack"},
+// 	"Q":  {12, "Queen"},
+// 	"K":  {13, "King"},
+// 	"A":  {14, "Ace"},
+// }
+
 // Type: Evaluator
 type Evaluator struct {
 	x string
