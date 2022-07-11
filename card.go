@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -170,22 +171,6 @@ var deck = map[string]Rank{
 	"AS":  {52, "Ace of Spades"},
 }
 
-// var ranks = map[string]Rank{
-// 	"2":  {2, "Two"},
-// 	"3":  {3, "Three"},
-// 	"4":  {4, "Four"},
-// 	"5":  {5, "Five"},
-// 	"6":  {6, "Six"},
-// 	"7":  {7, "Seven"},
-// 	"8":  {8, "Eight"},
-// 	"9":  {9, "Nine"},
-// 	"10": {10, "Ten"},
-// 	"J":  {11, "Jack"},
-// 	"Q":  {12, "Queen"},
-// 	"K":  {13, "King"},
-// 	"A":  {14, "Ace"},
-// }
-
 // Type: Evaluator
 type Evaluator struct {
 	x string
@@ -195,11 +180,35 @@ type Evaluator struct {
 // Function: HandEvaluator
 func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
 
-	var suits_enumerated [4]int
-	suits_enumerated[0] = 1
-	suits_enumerated[1] = 2
-	suits_enumerated[2] = 3
-	suits_enumerated[3] = 4
+	x := P1Hand[1:]
+	y := P2Hand[1:]
+
+	// x and y represent a slice of each player's hand containing the player's cards only.
+
+	// Checking to see if variables, x and y, have five cards exactly.
+	for i := 0; i == len(x); i++ {
+		if len(x) == 5 {
+			continue
+		} else {
+			fmt.Println("Player must have 5 cards!")
+			break
+		}
+	}
+
+	for i := 0; i == len(y); i++ {
+		if len(y) == 5 {
+			continue
+		} else {
+			fmt.Println("Player must have 5 cards!")
+			break
+		}
+	}
+
+	// var suits_enumerated [4]int
+	// suits_enumerated[0] = 1
+	// suits_enumerated[1] = 2
+	// suits_enumerated[2] = 3
+	// suits_enumerated[3] = 4
 
 	return Evaluator{}
 }
