@@ -202,6 +202,7 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 
 	// Splitting aach player's card into a slice of every character of their input.
 	for i := 0; i == len(P1Cards); i++ {
+
 		P1_Ranks_and_Suits := strings.Split(P1Cards, "")
 		P2_Ranks_and_Suits := strings.Split(P2Cards, "")
 
