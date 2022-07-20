@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -180,30 +179,6 @@ type Evaluator struct {
 // Function: HandEvaluator
 func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
 
-	x := P1Hand[1:]
-	y := P2Hand[1:]
-
-	// x and y represent a slice of each player's hand containing the player's cards only.
-
-	// Checking to see if variables, x and y, have five cards exactly.
-	for i := 0; i == len(x); i++ {
-		if len(x) == 5 {
-			continue
-		} else {
-			fmt.Println("Player must have 5 cards!")
-			break
-		}
-	}
-
-	for i := 0; i == len(y); i++ {
-		if len(y) == 5 {
-			continue
-		} else {
-			fmt.Println("Player must have 5 cards!")
-			break
-		}
-	}
-
 	// var suits_enumerated [4]int
 	// suits_enumerated[0] = 1
 	// suits_enumerated[1] = 2
@@ -214,36 +189,3 @@ func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
 }
 
 // https://stackoverflow.com/questions/42380183/algorithm-to-give-a-value-to-a-5-card-poker-hand
-
-// type Suit struct {
-// 	suit string
-// }
-
-// var suits = map[byte]Suit{
-// 	'H': {"Hearts"},
-// 	'S': {"Spades"},
-// 	'C': {"Clubs"},
-// 	'D': {"Diamonds"},
-// }
-
-// // Type: Rank - There are 13 different potential card numbers that a player can draw from a standand deck of cards.
-// type Rank struct {
-// 	value int
-// 	name  string
-// }
-
-// var ranks = map[string]Rank{
-// 	"2":  {2, "Two"},
-// 	"3":  {3, "Three"},
-// 	"4":  {4, "Four"},
-// 	"5":  {5, "Five"},
-// 	"6":  {6, "Six"},
-// 	"7":  {7, "Seven"},
-// 	"8":  {8, "Eight"},
-// 	"9":  {9, "Nine"},
-// 	"10": {10, "Ten"},
-// 	"J":  {11, "Jack"},
-// 	"Q":  {12, "Queen"},
-// 	"K":  {13, "King"},
-// 	"A":  {14, "Ace"},
-// }
