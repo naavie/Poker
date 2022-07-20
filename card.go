@@ -173,8 +173,8 @@ var deck = map[string]int{
 
 // Type: Evaluator
 type Evaluator struct {
-	P1Cards Card
-	P2Cards Card
+	P1Outcome bool
+	P2Outcome bool
 }
 
 // Types of Hands.
