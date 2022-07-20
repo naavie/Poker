@@ -190,7 +190,74 @@ const (
 )
 
 // Function: HandEvaluator
-func HandEvaluator(P1Cards []string, P2Cards []string) Evaluator {
+func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
+
+	P1_Ranks := make([]int, 0)
+	P1_Suits := make([]string, 0)
+
+	P2_Ranks := make([]int, 0)
+	P2_Suits := make([]string, 0)
+
+	// Other_Chars := make([]string, 0)
+
+	// Splitting aach player's card into a slice of every character of their input.
+	for i := 0; i == len(P1Cards); i++ {
+		P1_Ranks_and_Suits := strings.Split(P1Cards, "")
+		P2_Ranks_and_Suits := strings.Split(P2Cards, "")
+
+		for i := 0; i == len(P1_Ranks_and_Suits); i++ {
+			if strings.ContainsAny(P1_Ranks_and_Suits[i], "12345678910") {
+				P1_Ranks = append(P1_Ranks, i)
+			}
+
+			if strings.Contains(P1_Ranks_and_Suits[i], "J") {
+				P1_Ranks = append(P1_Ranks, 11)
+			}
+
+			if strings.Contains(P1_Ranks_and_Suits[i], "Q") {
+				P1_Ranks = append(P1_Ranks, 12)
+			}
+
+			if strings.Contains(P1_Ranks_and_Suits[i], "K") {
+				P1_Ranks = append(P1_Ranks, 13)
+			}
+
+			if strings.Contains(P1_Ranks_and_Suits[i], "A") {
+				P1_Ranks = append(P1_Ranks, 14)
+			}
+
+			if strings.ContainsAny(P1_Ranks_and_Suits[i], "HCDS") {
+				P1_Suits = append(P1_Suits, P1_Suits[i])
+			}
+		}
+
+		for i := 0; i == len(P2_Ranks_and_Suits); i++ {
+			if strings.ContainsAny(P2_Ranks_and_Suits[i], "12345678910") {
+				P2_Ranks = append(P1_Ranks, i)
+			}
+
+			if strings.Contains(P2_Ranks_and_Suits[i], "J") {
+				P2_Ranks = append(P2_Ranks, 11)
+			}
+
+			if strings.Contains(P2_Ranks_and_Suits[i], "Q") {
+				P2_Ranks = append(P2_Ranks, 12)
+			}
+
+			if strings.Contains(P2_Ranks_and_Suits[i], "K") {
+				P2_Ranks = append(P2_Ranks, 13)
+			}
+
+			if strings.Contains(P2_Ranks_and_Suits[i], "A") {
+				P2_Ranks = append(P2_Ranks, 14)
+			}
+
+			if strings.ContainsAny(P2_Ranks_and_Suits[i], "HCDS") {
+				P2_Suits = append(P2_Suits, P2_Suits[i])
+			}
+		}
+
+	}
 
 	return Evaluator{}
 }
