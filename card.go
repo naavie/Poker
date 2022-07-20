@@ -115,6 +115,7 @@ type Deck struct {
 	cards []Card
 }
 
+// Experimenting w/ Prime Numbers
 var deck = map[string]int{
 	"2H":  2,
 	"2C":  2,
@@ -189,9 +190,37 @@ const (
 )
 
 // Function: HandEvaluator
-func HandEvaluator(P1Cards Card, P2Cards Card) Evaluator {
+func HandEvaluator(P1Cards []string, P2Cards []string) Evaluator {
 
 	return Evaluator{}
 }
+
+// https://web.stanford.edu/class/cs101/bits-bytes.html
+
+// Character Bytes
+
+// Suits:
+
+// J: 74 bytes
+// Q: 81 bytes
+// K: 75 bytes
+// A: 65 bytes
+
+// Other:
+
+// spaces: 32 bytes
+
+// Ranks:
+
+// 2: 50 bytes
+// 3: 51 bytes
+// 4: 52 bytes
+// 5: 53 bytes
+// 6: 54 bytes
+// 7: 55 bytes
+// 8: 56 bytes
+// 9: 57 bytes
+// 10: 49,48 bytes (chars 1 and 0)
+// 11 (Jack):
 
 // https://stackoverflow.com/questions/42380183/algorithm-to-give-a-value-to-a-5-card-poker-hand
