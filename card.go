@@ -173,8 +173,8 @@ var deck = map[string]int{
 
 // Type: Evaluator
 type Evaluator struct {
-	x Hand
-	y Hand
+	x string
+	y string
 }
 
 // Function: HandEvaluator
@@ -201,13 +201,6 @@ func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
 		} else {
 			fmt.Println("Player must have 5 cards!")
 			break
-		}
-	}
-
-	for i, c := range x {
-		for k, _ := range ranks {
-			x_evaluated := strings.Count(x, k)
-			y_evaluated := strings.Count(y, k)
 		}
 	}
 
