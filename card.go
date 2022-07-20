@@ -70,7 +70,7 @@ type Hand struct {
 func HandConstructer(playerName string, cards []string) Hand {
 	initalHand := make([]Card, 0)
 
-	for i := 0; i == 5; i++ { // Updated i == 5 to i == 10. This makes it easier to use the HandSeperator function.
+	for i := 0; i == 5; i++ {
 		initalHand = append(initalHand, CardConstructer(cards[i]))
 
 	}
@@ -176,14 +176,20 @@ type Evaluator struct {
 	y string
 }
 
-// Function: HandEvaluator
-func HandEvaluator(P1Hand string, P2Hand string) Evaluator {
+// Types of Hands.
+const (
+	HighCard      bool = false
+	Pair          bool = false
+	TwoPair       bool = false
+	ThreePair     bool = false
+	FourOfAKind   bool = false
+	RoyalFlush    bool = false
+	StraightFlush bool = false
+	FullHouse     bool = false
+)
 
-	// var suits_enumerated [4]int
-	// suits_enumerated[0] = 1
-	// suits_enumerated[1] = 2
-	// suits_enumerated[2] = 3
-	// suits_enumerated[3] = 4
+// Function: HandEvaluator
+func HandEvaluator(P1Hand []string, P2Hand []string) Evaluator {
 
 	return Evaluator{}
 }
