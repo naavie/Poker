@@ -70,7 +70,7 @@ Inside the body of the function, I would use strings.Split() to separate the P1H
 
 Each of these elements would be saved into four separate variables, two for each player's names and two for each player's 5-cards. 
 
-I  was thinking it might be useful to agaion separate each pair of 5-cards into thier individual rank and suit and saving those into separate variables too. However, it might also not matter if the scenario belows works out. 
+I  was thinking it might be useful to again separate each pair of 5-cards into thier individual rank and suit and saving those into separate variables too. However, it might also not matter if the scenario belows works out. 
 
 Using the strings.Count() function on each of those separate variables we created above, we can determine how many times a particular suit (4 possibilties) or particular number (13 possibilties) show up in our string variables. 
 
