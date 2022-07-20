@@ -172,8 +172,8 @@ var deck = map[string]int{
 
 // Type: Evaluator
 type Evaluator struct {
-	x string
-	y string
+	hands     Game
+	validDeck Deck
 }
 
 // Types of Hands.
@@ -189,7 +189,7 @@ const (
 )
 
 // Function: HandEvaluator
-func HandEvaluator(P1Hand []string, P2Hand []string) Evaluator {
+func HandEvaluator(hands Game) Evaluator {
 
 	return Evaluator{}
 }
