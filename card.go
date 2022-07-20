@@ -263,6 +263,8 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 	return Evaluator{}
 }
 
+// https://www.geeksforgeeks.org/golang-program-to-find-the-frequency-of-each-element-in-an-array/
+
 // https://web.stanford.edu/class/cs101/bits-bytes.html
 
 // Character Bytes
