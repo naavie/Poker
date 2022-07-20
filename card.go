@@ -116,72 +116,72 @@ type Deck struct {
 }
 
 var deck = map[string]int{
-	"2H":  1,
+	"2H":  2,
 	"2C":  2,
-	"2D":  3,
-	"2S":  4,
-	"3H":  5,
-	"3C":  6,
-	"3D":  7,
-	"3S":  8,
-	"4H":  9,
-	"4C":  10,
-	"4D":  11,
-	"4S":  12,
-	"5H":  13,
-	"5C":  14,
-	"5D":  15,
-	"5S":  16,
-	"6H":  17,
-	"6C":  18,
-	"6D":  19,
-	"6S":  20,
-	"7H":  21,
-	"7C":  22,
-	"7D":  23,
-	"7S":  24,
-	"8H":  25,
-	"8C":  26,
-	"8D":  27,
-	"8S":  28,
-	"9H":  29,
-	"9C":  30,
-	"9D":  31,
-	"9S":  32,
-	"10H": 33,
-	"10C": 34,
-	"10D": 35,
-	"10S": 36,
-	"JH":  37,
-	"JC":  38,
-	"JD":  39,
-	"JS":  40,
-	"QH":  41,
-	"QC":  42,
-	"QD":  43,
-	"QS":  44,
-	"KH":  45,
-	"KC":  46,
-	"KD":  47,
-	"KS":  48,
-	"AH":  49,
-	"AC":  50,
-	"AD":  51,
-	"AS":  52,
+	"2D":  2,
+	"2S":  2,
+	"3H":  3,
+	"3C":  3,
+	"3D":  3,
+	"3S":  3,
+	"4H":  5,
+	"4C":  5,
+	"4D":  5,
+	"4S":  5,
+	"5H":  7,
+	"5C":  7,
+	"5D":  7,
+	"5S":  7,
+	"6H":  11,
+	"6C":  11,
+	"6D":  11,
+	"6S":  11,
+	"7H":  13,
+	"7C":  13,
+	"7D":  13,
+	"7S":  13,
+	"8H":  17,
+	"8C":  17,
+	"8D":  17,
+	"8S":  17,
+	"9H":  19,
+	"9C":  19,
+	"9D":  19,
+	"9S":  19,
+	"10H": 23,
+	"10C": 23,
+	"10D": 23,
+	"10S": 23,
+	"JH":  29,
+	"JC":  29,
+	"JD":  29,
+	"JS":  29,
+	"QH":  31,
+	"QC":  31,
+	"QD":  31,
+	"QS":  31,
+	"KH":  37,
+	"KC":  37,
+	"KD":  37,
+	"KS":  37,
+	"AH":  41,
+	"AC":  41,
+	"AD":  41,
+	"AS":  41,
 }
 
 // Type: Evaluator
 type Evaluator struct {
-	hands     Game
-	validDeck Deck
+	P1Cards Card
+	P2Cards Card
 }
 
 // Types of Hands.
 const (
 	HighCard      bool = false
-	Pair          bool = false
-	TwoPair       bool = false
-	ThreePair     bool = false
+	OnePair       bool = false
+	TwoPairs      bool = false
+	ThreePairs    bool = false
 	FourOfAKind   bool = false
 	RoyalFlush    bool = false
 	StraightFlush bool = false
@@ -189,7 +189,7 @@ const (
 )
 
 // Function: HandEvaluator
-func HandEvaluator(hands Game) Evaluator {
+func HandEvaluator(P1Cards Card, P2Cards Card) Evaluator {
 
 	return Evaluator{}
 }
