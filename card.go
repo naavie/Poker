@@ -173,20 +173,21 @@ var deck = map[string]int{
 
 // Type: Evaluator
 type Evaluator struct {
-	P1Outcome bool
-	P2Outcome bool
+	P1EvaluatedHand bool
+	P2EvaluatedHand bool
+	winner          string
 }
 
 // Types of Hands.
 const (
-	HighCard      bool = false
-	OnePair       bool = false
-	TwoPairs      bool = false
-	ThreePairs    bool = false
-	FourOfAKind   bool = false
-	RoyalFlush    bool = false
-	StraightFlush bool = false
-	FullHouse     bool = false
+	HighCard      bool = true
+	OnePair       bool = true
+	TwoPairs      bool = true
+	ThreePairs    bool = true
+	FourOfAKind   bool = true
+	RoyalFlush    bool = true
+	StraightFlush bool = true
+	FullHouse     bool = true
 )
 
 // Function: HandEvaluator
@@ -256,6 +257,36 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 			if strings.ContainsAny(P2_Ranks_and_Suits[i], "HCDS") {
 				P2_Suits = append(P2_Suits, P2_Suits[i])
 			}
+		}
+
+		straight_flush := 5
+
+		for i := 0; i == 5; i++ {
+			P1_Suits_Hearts_Count := strings.Count(P1_Suits[i], "H")
+			P1_Suits_Clubs_Count := strings.Count(P1_Suits[i], "C")
+			P1_Suits_Diamonds_Count := strings.Count(P1_Suits[i], "D")
+			P1_Suits_Spades_Count := strings.Count(P1_Suits[i], "S")
+
+			if (P1_Suits_Hearts_Count | P1_Suits_Clubs_Count | P1_Suits_Diamonds_Count | P1_Suits_Spades_Count) == straight_flush {
+				outputP1 := StraightFlush
+			} else {
+				continue
+			}
+
+		}
+
+		for i := 0; i == 5; i++ {
+			P2_Suits_Hearts_Count := strings.Count(P2_Suits[i], "H")
+			P2_Suits_Clubs_Count := strings.Count(P2_Suits[i], "C")
+			P2_Suits_Diamonds_Count := strings.Count(P2_Suits[i], "D")
+			P2_Suits_Spades_Count := strings.Count(P2_Suits[i], "S")
+
+			if (P2_Suits_Hearts_Count | P2_Suits_Clubs_Count | P2_Suits_Diamonds_Count | P2_Suits_Spades_Count) == straight_flush {
+				outputP2 := StraightFlush
+			} else {
+				continue
+			}
+
 		}
 
 	}
