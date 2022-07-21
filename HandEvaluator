@@ -79,3 +79,38 @@ Then from that we might be able to infer certain results. For instance, if using
 From there, we can continue to use the len() and strings.Count() functions are investigate each special 5-card combination.
 
 Once we have all the information we need, we can concatenate it and put it in our return statement. 
+
+--------------------------------------------------------------------------------------------------------------
+
+
+// https://www.geeksforgeeks.org/golang-program-to-find-the-frequency-of-each-element-in-an-array/
+
+// https://web.stanford.edu/class/cs101/bits-bytes.html
+
+// Character Bytes
+
+// Suits:
+
+// J: 74 bytes
+// Q: 81 bytes
+// K: 75 bytes
+// A: 65 bytes
+
+// Other:
+
+// spaces: 32 bytes
+
+// Ranks:
+
+// 2: 50 bytes
+// 3: 51 bytes
+// 4: 52 bytes
+// 5: 53 bytes
+// 6: 54 bytes
+// 7: 55 bytes
+// 8: 56 bytes
+// 9: 57 bytes
+// 10: 49,48 bytes (chars 1 and 0)
+// 11 (Jack):
+
+// https://stackoverflow.com/questions/42380183/algorithm-to-give-a-value-to-a-5-card-poker-hand
