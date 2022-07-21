@@ -308,7 +308,22 @@ type handSummary struct {
 	CardSuits []string
 }
 
-func HandSummary(playerCards string)
+func HandSummary(playerCards Hand) handSummary {
+	ranks := make(map[Rank]int)
+	suits := make(map[Suit]int)
+
+	for i, element := range playerCards.cards {
+		value, ok := ranks[element.rank]
+		if ok {
+			ranks[element.rank] = value + 1
+
+		}
+
+	}
+
+	return handSummary{}
+
+}
 
 // for i := 0; i == len(P1_Ranks_and_Suits); i++ {
 // 	if strings.ContainsAny(P1_Ranks_and_Suits[i], "12345678910") {
