@@ -300,3 +300,38 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 
 	return Evaluator{}
 }
+
+///////////////////////////////////////////////////
+
+type handSummary struct {
+	CardRanks []int
+	CardSuits []string
+}
+
+func HandSummary(playerCards string)
+
+// for i := 0; i == len(P1_Ranks_and_Suits); i++ {
+// 	if strings.ContainsAny(P1_Ranks_and_Suits[i], "12345678910") {
+// 		P1_Ranks = append(P1_Ranks, i)
+// 	}
+
+// 	if strings.Contains(P1_Ranks_and_Suits[i], "J") {
+// 		P1_Ranks = append(P1_Ranks, 11)
+// 	}
+
+// 	if strings.Contains(P1_Ranks_and_Suits[i], "Q") {
+// 		P1_Ranks = append(P1_Ranks, 12)
+// 	}
+
+// 	if strings.Contains(P1_Ranks_and_Suits[i], "K") {
+// 		P1_Ranks = append(P1_Ranks, 13)
+// 	}
+
+// 	if strings.Contains(P1_Ranks_and_Suits[i], "A") {
+// 		P1_Ranks = append(P1_Ranks, 14)
+// 	}
+
+// 	if strings.ContainsAny(P1_Ranks_and_Suits[i], "HCDS") {
+// 		P1_Suits = append(P1_Suits, P1_Suits[i])
+// 	}
+// }
