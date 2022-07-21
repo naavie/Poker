@@ -259,17 +259,19 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 			}
 		}
 
-		straight_flush := 5
-
 		for i := 0; i == 5; i++ {
 			P1_Suits_Hearts_Count := strings.Count(P1_Suits[i], "H")
 			P1_Suits_Clubs_Count := strings.Count(P1_Suits[i], "C")
 			P1_Suits_Diamonds_Count := strings.Count(P1_Suits[i], "D")
 			P1_Suits_Spades_Count := strings.Count(P1_Suits[i], "S")
 
-			if (P1_Suits_Hearts_Count | P1_Suits_Clubs_Count | P1_Suits_Diamonds_Count | P1_Suits_Spades_Count) == straight_flush {
-				outputP1 := StraightFlush
+			if (P1_Suits_Hearts_Count | P1_Suits_Clubs_Count | P1_Suits_Diamonds_Count | P1_Suits_Spades_Count) == 5 {
+				P1EvaluatedHand := StraightFlush
 			} else {
+				continue
+			}
+
+			if (P1_Suits_Hearts_Count | P1_Suits_Clubs_Count | P1_Suits_Diamonds_Count | P1_Suits_Spades_Count) < 5 {
 				continue
 			}
 
@@ -281,9 +283,13 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 			P2_Suits_Diamonds_Count := strings.Count(P2_Suits[i], "D")
 			P2_Suits_Spades_Count := strings.Count(P2_Suits[i], "S")
 
-			if (P2_Suits_Hearts_Count | P2_Suits_Clubs_Count | P2_Suits_Diamonds_Count | P2_Suits_Spades_Count) == straight_flush {
+			if (P2_Suits_Hearts_Count | P2_Suits_Clubs_Count | P2_Suits_Diamonds_Count | P2_Suits_Spades_Count) == 5 {
 				outputP2 := StraightFlush
 			} else {
+				continue
+			}
+
+			if (P2_Suits_Hearts_Count | P2_Suits_Clubs_Count | P2_Suits_Diamonds_Count | P2_Suits_Spades_Count) < 5 {
 				continue
 			}
 
