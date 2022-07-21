@@ -179,16 +179,15 @@ type Evaluator struct {
 }
 
 // Types of Hands.
-const (
-	HighCard      bool = true
-	OnePair       bool = true
-	TwoPairs      bool = true
-	ThreePairs    bool = true
-	FourOfAKind   bool = true
-	RoyalFlush    bool = true
-	StraightFlush bool = true
-	FullHouse     bool = true
-)
+var HighCard bool = false
+var OnePair bool = false
+var TwoPairs bool = false
+var ThreePairs bool = false
+var FourOfAKind bool = false
+var Flush bool = false
+var RoyalFlush bool = false
+var StraightFlush bool = false
+var FullHouse bool = false
 
 // Function: HandEvaluator
 func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
@@ -266,7 +265,8 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 			P1_Suits_Spades_Count := strings.Count(P1_Suits[i], "S")
 
 			if (P1_Suits_Hearts_Count | P1_Suits_Clubs_Count | P1_Suits_Diamonds_Count | P1_Suits_Spades_Count) == 5 {
-				P1EvaluatedHand := StraightFlush
+				Flush = true
+				P1EvaluatedHand := Flush
 			} else {
 				continue
 			}
@@ -284,7 +284,8 @@ func HandEvaluator(P1Cards string, P2Cards string) Evaluator {
 			P2_Suits_Spades_Count := strings.Count(P2_Suits[i], "S")
 
 			if (P2_Suits_Hearts_Count | P2_Suits_Clubs_Count | P2_Suits_Diamonds_Count | P2_Suits_Spades_Count) == 5 {
-				outputP2 := StraightFlush
+				Flush = true
+				outputP2 := Flush
 			} else {
 				continue
 			}
